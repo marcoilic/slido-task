@@ -1,26 +1,21 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import { Button } from "./components/base-items/button";
+import { Input } from "./components/base-items/input";
+import { TextArea } from "./components/base-items/textarea";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+		<div className="App">
+			<header className="App-header">
+				<Button onClick={() => console.log("hi")} disabled={false}>
+					Hello
+				</Button>
+				<Input />
+				<TextArea name="test" />
+			</header>
+		</div>
+	);
 }
 
 export default App;
