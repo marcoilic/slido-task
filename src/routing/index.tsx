@@ -1,13 +1,18 @@
 import * as React from "react";
 import { HashRouter, Route, Switch } from "react-router-dom";
 
-import App from "../App";
+import { EventsList } from "../components/pages/events-list";
+import { EventDetail } from "../components/pages/events-detail";
+import { EventsProvider } from "../components/contexts/events-context/EventsProvider";
 
 export const Router = () => {
 	return (
 		<HashRouter>
 			<Switch>
-				<Route path="/" exact={true} component={App} />
+				<EventsProvider>
+					<Route path="/" exact={true} component={EventsList} />
+					<Route path="/:id" exact={true} component={EventDetail} />
+				</EventsProvider>
 			</Switch>
 		</HashRouter>
 	);

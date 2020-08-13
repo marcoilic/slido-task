@@ -14,6 +14,8 @@ interface InputProps {
 	// label?: string;
 }
 
+// TODO: optional label
+
 export const Input = ({ inputType = "text", ...otherProps }: InputProps) => {
 	const input = (
 		<>

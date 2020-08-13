@@ -5,8 +5,8 @@ import "./style.scss";
 
 interface ButtonProps {
 	buttonType?: "button" | "submit" | "reset";
-	onClick: () => void;
-	disabled: boolean;
+	onClick?: () => void;
+	disabled?: boolean;
 	to?: string;
 	children:
 		| React.ReactNode
@@ -20,7 +20,7 @@ interface ButtonProps {
 export const Button = ({
 	buttonType = "button",
 	onClick,
-	disabled,
+	disabled = false,
 	to,
 	children,
 }: ButtonProps) => {
