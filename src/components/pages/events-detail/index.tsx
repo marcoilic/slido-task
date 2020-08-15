@@ -1,31 +1,29 @@
-import React from "react";
+import React, { useContext } from "react";
 import { RouteComponentProps } from "react-router-dom";
 
 import { Button } from "../../base-items/button";
 import { Container } from "../../base-items/container";
-import { EventsContext } from "../../contexts/events-context/EventsProvider";
+import { Header } from "../../layout/header";
 import { findCurrentEvent } from "../../helpers/findCurrentEvent";
+import { eventsContext } from "../../contexts/events-context/EventsProvider";
 
 type TParams = { id: string };
 
 export const EventDetail = ({ match }: RouteComponentProps<TParams>) => {
-	return (
-		<EventsContext.Consumer>
-			{(context) => {
-				let item = findCurrentEvent(context, match.params.id);
+	const context = useContext(eventsContext);
 
-				return (
-					<Container>
-						{item ? (
-							<div>
-								Event name: {item.name}
-								Event description: {item.description}
-							</div>
-						) : null}
-						<Button to="/">back</Button>
-					</Container>
-				);
-			}}
-		</EventsContext.Consumer>
+	const item = findCurrentEvent(context.state, match.params.id);
+
+	return (
+		<Container>
+			<Header text={item ? item.name : null} />
+			{item ? (
+				<div>
+					Event name: {item.name}
+					Event description: {item.description}
+				</div>
+			) : null}
+			<Button to="/">back</Button>
+		</Container>
 	);
 };

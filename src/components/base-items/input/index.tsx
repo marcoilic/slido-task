@@ -4,25 +4,43 @@ import { Label } from "../label";
 
 // import "./style.scss";
 
-interface InputProps {
+export interface InputProps {
 	id?: string;
 	placeholder?: string;
 	defaultValue?: string;
 	disabled?: boolean;
 	onClick?: React.MouseEventHandler;
-	inputType?: "text" | "email" | "button" | "checkbox" | "submit" | "reset";
-	// label?: string;
+	onChange?: any;
+	name?: string;
+	ref?: any;
+	value?: any;
+	inputType?:
+		| "text"
+		| "email"
+		| "button"
+		| "checkbox"
+		| "submit"
+		| "date"
+		| "reset";
+	label?: string;
 }
 
-// TODO: optional label
-
-export const Input = ({ inputType = "text", ...otherProps }: InputProps) => {
+export const Input = ({
+	inputType = "text",
+	label,
+	...otherProps
+}: InputProps) => {
 	const input = (
 		<>
-			<Label text="Name test" />
+			{label ? <Label text={label} /> : false}
 			<input type={inputType} {...otherProps} />
 		</>
 	);
+
+	if (inputType === "date") {
+		// TODO: ADD DATEPICKER
+		// return
+	}
 
 	return input;
 };

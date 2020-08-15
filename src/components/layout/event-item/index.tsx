@@ -1,15 +1,24 @@
-import React from "react";
-
-import { Button } from "../../base-items/button";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 
-import { EventProps } from "../../contexts/events-context/EventsProvider";
+import { Button } from "../../base-items/button";
+
+import {
+	eventsContext,
+	EventProps,
+} from "../../contexts/events-context/EventsProvider";
 
 interface EventItemProps {
 	event: EventProps;
 }
 
 export const EventItem = ({ event }: EventItemProps) => {
+	const { dispatch } = useContext(eventsContext);
+
+	const onRemove = () => {
+		dispatch({ type: "DELETE_EVENT", event });
+	};
+
 	return (
 		<div>
 			<Link className="text--link" to={`/${event.id}`}>
@@ -17,13 +26,11 @@ export const EventItem = ({ event }: EventItemProps) => {
 			</Link>
 
 			<p>id: {event.id}</p>
+			<p>host: {event.host}</p>
 			<p>name: {event.name}</p>
-			<p>description: {event.description}</p>
-			<p>location: {event.location}</p>
-			<p>eventDate: {event.eventDate}</p>
-			<p>eventEnds: {event.eventEnds}</p>
 
 			<Button to={`/${event.id}`}>More info</Button>
+			<Button onClick={onRemove}>Delete event</Button>
 		</div>
 	);
 };
