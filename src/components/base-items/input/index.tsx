@@ -2,7 +2,7 @@ import * as React from "react";
 
 import { Label } from "../label";
 
-// import "./style.scss";
+import "./style.scss";
 
 export interface InputProps {
 	id?: string;
@@ -31,10 +31,14 @@ export const Input = ({
 	...otherProps
 }: InputProps) => {
 	const input = (
-		<>
-			{label ? <Label text={label} /> : false}
-			<input type={inputType} {...otherProps} />
-		</>
+		<div className="input-wrapper">
+			{label ? <Label text={label} className="input-wrapper--label" /> : false}
+			<input
+				type={inputType}
+				className="input-wrapper--input"
+				{...otherProps}
+			/>
+		</div>
 	);
 
 	if (inputType === "date") {

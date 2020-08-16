@@ -1,5 +1,6 @@
 import * as React from "react";
 import { Link } from "react-router-dom";
+import classNames from "classnames";
 
 import "./style.scss";
 
@@ -7,6 +8,7 @@ interface ButtonProps {
 	buttonType?: "button" | "submit" | "reset";
 	onClick?: () => void;
 	disabled?: boolean;
+	className?: string;
 	to?: string;
 	children:
 		| React.ReactNode
@@ -18,6 +20,7 @@ interface ButtonProps {
 }
 
 export const Button = ({
+	className,
 	buttonType = "button",
 	onClick,
 	disabled = false,
@@ -26,7 +29,7 @@ export const Button = ({
 }: ButtonProps) => {
 	const button = (
 		<button
-			className="buttontest"
+			className={classNames("button", className)}
 			type={buttonType}
 			onClick={onClick}
 			disabled={disabled}

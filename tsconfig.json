@@ -1,46 +1,42 @@
 {
-  "compilerOptions": {
-    "jsx": "react",
-    "outDir": "build/dist",
-    "module": "esnext",
-    "target": "es5",
-    "lib": [
-      "es6",
-      "dom"
-    ],
-    "sourceMap": true,
-    "allowJs": true,
-    "moduleResolution": "node",
-    "rootDir": "src",
-    "noImplicitReturns": true,
-    "noImplicitThis": true,
-    "noImplicitAny": false,
-    "strictNullChecks": true,
-    "skipLibCheck": true,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "noEmit": true
-  },
-  "exclude": [
-    "node_modules",
-    "build",
-    "scripts",
-    "webpack",
-    "jest",
-    "src/setupTests.ts"
-  ],
-  "types": [
-    "typePatches",
-    "node",
-    "classnames",
-    "react-router-dom",
-    "lodash"
-  ],
-  "include": [
-    "src"
-  ]
+	"compilerOptions": {
+		"jsx": "react",
+		"outDir": "build/dist",
+		"module": "esnext",
+		"target": "es5",
+		"lib": ["es6", "dom"],
+		"sourceMap": true,
+		"allowJs": true,
+		"moduleResolution": "node",
+		"rootDir": "src",
+		"noImplicitReturns": true,
+		"noImplicitThis": true,
+		"noImplicitAny": false,
+		"strictNullChecks": true,
+		"skipLibCheck": true,
+		"esModuleInterop": true,
+		"allowSyntheticDefaultImports": true,
+		"strict": true,
+		"forceConsistentCasingInFileNames": true,
+		"resolveJsonModule": true,
+		"isolatedModules": true,
+		"noEmit": true
+	},
+	"exclude": [
+		"node_modules",
+		"build",
+		"scripts",
+		"webpack",
+		"jest",
+		"src/setupTests.ts"
+	],
+	"types": [
+		"typePatches",
+		"node",
+		"classnames",
+		"react-router-dom",
+		"lodash",
+		"react-evil-icons"
+	],
+	"include": ["src"]
 }

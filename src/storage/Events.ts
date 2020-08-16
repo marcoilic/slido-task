@@ -7,7 +7,6 @@ export const Events = [
 		location: "Kosice",
 		eventDate: "25/25/2018",
 		eventEnds: "28/12/2019 5:00",
-		peopleInterested: 101,
 	},
 	{
 		id: "4345ec8b-3c0a-41ba-9974-46799d451517",
@@ -17,6 +16,5 @@ export const Events = [
 		location: "Kosice 2",
 		eventDate: "25/4/2018",
 		eventEnds: "28/12/2019 5:00",
-		peopleInterested: 250,
 	},
 ];

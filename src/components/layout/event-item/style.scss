@@ -1,0 +1,53 @@
+@import "../../../assets/styles/variables";
+
+.event-item-wrapper {
+	background: $white;
+	border: 1px solid $white;
+	border-radius: 15px;
+	padding: 15px;
+	margin-bottom: 10px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+
+	&--leftside {
+		display: flex;
+		flex-direction: column;
+		line-height: 1.8rem;
+
+		&--dates {
+			color: $primary;
+		}
+
+		&--name {
+			font-weight: bolder;
+			text-decoration: none;
+			color: $black;
+		}
+
+		&--host {
+			font-weight: 300;
+			font-size: 13px;
+
+			&-icon {
+				margin-right: 5px;
+			}
+
+			&-hostname {
+				color: $primary;
+			}
+		}
+	}
+
+	&--rightside {
+		button {
+			margin-right: 15px;
+		}
+
+		.customIcon {
+			vertical-align: middle;
+			cursor: pointer;
+		}
+	}
+}

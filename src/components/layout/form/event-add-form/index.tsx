@@ -1,6 +1,8 @@
 import React, { useContext } from "react";
 import { useForm, useField } from "react-final-form-hooks";
 import { Input } from "../../../base-items/input";
+import { Button } from "../../../base-items/button";
+
 import {
 	eventsContext,
 	EventProps,
@@ -30,9 +32,7 @@ export const EventAddForm = () => {
 	const eventDate = useField("eventDate", form);
 	const eventsEnds = useField("eventsEnds", form);
 
-	// console.log("form values", values);
-	// console.log("form pristine", pristine);
-	// console.log("form submitting", submitting);
+	console.log("form pristine", pristine);
 
 	return (
 		<form onSubmit={handleSubmit}>
@@ -72,6 +72,7 @@ export const EventAddForm = () => {
 				<button type="submit" disabled={submitting}>
 					Submit
 				</button>
+				<Button to="/">Back</Button>
 				{/* <button
 					type="button"
 					onClick={() => form.reset()}

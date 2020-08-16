@@ -1,3 +1,11 @@
-.buttontest {
-	background: red;
+@import "../../../assets/styles/variables.scss";
+
+.button {
+	background: $primary;
+	border: 1px solid $primary;
+	padding: 7px;
+	border-radius: 3px;
+	color: $white;
+	font-weight: bolder;
+	cursor: pointer;
 }
