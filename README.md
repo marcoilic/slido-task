@@ -1,6 +1,6 @@
 # slido-task / Events app
 
-# About
+## About
 
 Simple single-page application for event administration as an assigment for Slido.
 
@@ -14,13 +14,13 @@ Performance, scalability, component reusability, fast rendering with Virtual DOM
 
 No external libraries, and more straightforward way to handle global state management in React applications, suitable for small/medium projects.
 
-# Prerequisites
+## Prerequisites
 
 1. Git
 2. Node - any 12.x version starting with v12.0.0 or greater
 3. A clone of the slido-task/Events app repo on your local machine
 
-# Installation
+## Installation
 
 Go into the project root and install npm dependencies.
 
@@ -29,7 +29,7 @@ cd <folder>
 npm install
 ```
 
-# Running locally
+## Running locally
 
 To start server and run application use command:
 
@@ -39,7 +39,7 @@ npm start
 
 App is default running on `http://localhost:3000`.
 
-# Build
+## Build
 
 To build the project, use command:
 
@@ -49,7 +49,7 @@ npm run build
 
 Build can be found in `build` folder.
 
-# E2E testing
+## E2E testing
 
 For E2E testing, use command:
 
