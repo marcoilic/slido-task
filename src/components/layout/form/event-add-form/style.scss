@@ -1,0 +1,41 @@
+@import "../../../../assets//styles/variables.scss";
+
+.form-wrapper {
+	background: $white;
+	border: 1px solid $white;
+	padding: 20px;
+	border-radius: 15px;
+
+	&--error {
+		color: $red;
+		font-size: $font-size-smaller;
+		font-weight: bolder;
+	}
+
+	&--textarea-wrapper {
+		display: flex;
+		flex-direction: column;
+		margin-top: 25px;
+	}
+
+	&--datepickers-wrapper {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-evenly;
+		margin-top: 25px;
+
+		&--item {
+			span {
+				margin-right: 5px;
+			}
+		}
+	}
+
+	&--input-wrapper {
+		margin-top: 25px;
+	}
+
+	&--buttons {
+		margin-top: 10px;
+	}
+}

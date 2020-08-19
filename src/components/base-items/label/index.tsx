@@ -1,4 +1,7 @@
 import * as React from "react";
+import classNames from "classnames";
+
+import "./style.scss";
 
 interface LabelProps {
 	text: string;
@@ -6,7 +9,9 @@ interface LabelProps {
 }
 
 export const Label = ({ text, className }: LabelProps) => {
-	const label = <span className={className}>{text}</span>;
+	const label = (
+		<span className={classNames("label-item", className)}>{text}</span>
+	);
 
 	return label;
 };

@@ -1,9 +1,10 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import classNames from "classnames";
+import moment from "moment";
 
 import { Button } from "../../base-items/button";
-import { IconComponent } from "../../items/icon";
-
+import { IconComponent } from "../../items/icon-component";
 import {
 	eventsContext,
 	EventProps,
@@ -23,10 +24,20 @@ export const EventItem = ({ event }: EventItemProps) => {
 	};
 
 	return (
-		<div className="event-item-wrapper">
+		<div
+			className={classNames("event-item-wrapper", {
+				"is-past": event.isPastEvent,
+			})}
+		>
 			<div className="event-item-wrapper--leftside">
+				{event.isPastEvent ? (
+					<span className="event-item-wrapper--leftside--past">PAST EVENT</span>
+				) : (
+					<></>
+				)}
 				<span className="event-item-wrapper--leftside--dates">
-					{event.eventDate} - {event.eventEnds}
+					{moment(event.eventDate).format("lll")} -{" "}
+					{moment(event.eventEnds).format("lll")}
 				</span>
 				<Link
 					className="event-item-wrapper--leftside--name"
@@ -49,8 +60,9 @@ export const EventItem = ({ event }: EventItemProps) => {
 				</span>
 			</div>
 			<div className="event-item-wrapper--rightside">
-				<Button to={`/${event.id}`}>View details</Button>
-				{/* <Button onClick={onRemove}>Delete event</Button> */}
+				<Button to={`/${event.id}`} className="view-details-btn">
+					View details
+				</Button>
 				<IconComponent name="icon-trash customIcon" onClick={onRemove} />
 			</div>
 		</div>

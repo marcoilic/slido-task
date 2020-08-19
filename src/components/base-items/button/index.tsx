@@ -5,6 +5,7 @@ import classNames from "classnames";
 import "./style.scss";
 
 interface ButtonProps {
+	id?: string;
 	buttonType?: "button" | "submit" | "reset";
 	onClick?: () => void;
 	disabled?: boolean;
@@ -22,16 +23,16 @@ interface ButtonProps {
 export const Button = ({
 	className,
 	buttonType = "button",
-	onClick,
 	disabled = false,
 	to,
+	id,
 	children,
 }: ButtonProps) => {
 	const button = (
 		<button
+			id={id}
 			className={classNames("button", className)}
 			type={buttonType}
-			onClick={onClick}
 			disabled={disabled}
 		>
 			{children}

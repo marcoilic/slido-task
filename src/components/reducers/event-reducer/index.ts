@@ -1,6 +1,14 @@
 import * as uuid from "uuid";
 
-export const EventReducer = (state, action) => {
+import { EventProps } from "../../contexts/events-context/EventsProvider";
+
+interface actionState {
+	type: string;
+	values: EventProps;
+	event: EventProps;
+}
+
+export const EventReducer = (state: EventProps[], action: actionState) => {
 	switch (action.type) {
 		case "ADD_EVENT":
 			return [
@@ -13,6 +21,7 @@ export const EventReducer = (state, action) => {
 					location: action.values.location,
 					eventDate: action.values.eventDate,
 					eventEnds: action.values.eventEnds,
+					isPastEvent: false,
 				},
 			];
 

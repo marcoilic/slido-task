@@ -1,0 +1,62 @@
+@import "../../../assets//styles/variables.scss";
+
+.details-wrapper {
+	background: $white;
+	border: 1px solid $white;
+	padding: 20px;
+	border-radius: 15px;
+
+	.bordered {
+		padding-bottom: 10px;
+		border-bottom: 1px solid $primary;
+		align-items: center;
+	}
+
+	.justified {
+		justify-content: space-between;
+	}
+
+	.row-direction {
+		flex-direction: row;
+	}
+
+	.column-direction {
+		flex-direction: column;
+	}
+
+	.invalid-url {
+		text-align: center;
+	}
+
+	&--row {
+		display: flex;
+		margin-top: 20px;
+		margin-bottom: 20px;
+		flex-wrap: wrap;
+
+		&--icon {
+			margin-right: 5px;
+			font-size: $font-size-normal;
+		}
+
+		&--host {
+			font-weight: bold;
+			font-size: $font-size-normal;
+		}
+
+		&--text {
+			font-weight: 300;
+			font-size: $font-size-normal;
+		}
+
+		&--p {
+			margin-top: 10px;
+			font-weight: 300;
+			font-size: $font-size-normal;
+		}
+	}
+
+	&--button {
+		margin-top: 15px;
+	}
+}

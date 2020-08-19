@@ -1,5 +1,9 @@
 @import "../../../assets/styles/variables";
 
+.is-past {
+	opacity: 0.5 !important;
+}
+
 .event-item-wrapper {
 	background: $white;
 	border: 1px solid $white;
@@ -16,8 +20,15 @@
 		flex-direction: column;
 		line-height: 1.8rem;
 
+		&--past {
+			color: $red;
+			font-weight: bolder;
+			font-size: $font-size-bigger;
+		}
+
 		&--dates {
 			color: $primary;
+			font-size: $font-size-normal;
 		}
 
 		&--name {
@@ -28,7 +39,7 @@
 
 		&--host {
 			font-weight: 300;
-			font-size: 13px;
+			font-size: $font-size-smaller;
 
 			&-icon {
 				margin-right: 5px;

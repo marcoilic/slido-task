@@ -30,13 +30,6 @@
 		"jest",
 		"src/setupTests.ts"
 	],
-	"types": [
-		"typePatches",
-		"node",
-		"classnames",
-		"react-router-dom",
-		"lodash",
-		"react-evil-icons"
-	],
+	"types": ["typePatches", "node", "classnames", "react-router-dom", "lodash"],
 	"include": ["src"]
 }

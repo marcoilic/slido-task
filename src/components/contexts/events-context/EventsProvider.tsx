@@ -10,6 +10,7 @@ export interface EventProps {
 	location: string;
 	eventDate: string;
 	eventEnds: string;
+	isPastEvent: boolean;
 }
 
 const initialState: any = Events;

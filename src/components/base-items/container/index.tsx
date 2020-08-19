@@ -11,8 +11,6 @@ interface ContainerProps {
 		| string;
 }
 
-export const Container = ({ children, ...otherProps }: ContainerProps) => (
-	<div className="container" {...otherProps}>
-		{children}
-	</div>
+export const Container = ({ children }: ContainerProps) => (
+	<div className="container">{children}</div>
 );

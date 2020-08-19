@@ -7,7 +7,7 @@ import { EventAdd } from "../components/pages/events-add";
 
 import { EventsProvider } from "../components/contexts/events-context/EventsProvider";
 
-export const Router = () => {
+export const Router: React.FC = () => {
 	return (
 		<EventsProvider>
 			<HashRouter>

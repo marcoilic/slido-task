@@ -1,6 +1,7 @@
 import * as React from "react";
 
 import { Label } from "../label";
+import { DatePickerInput } from "../../items/datepicker";
 
 import "./style.scss";
 
@@ -9,11 +10,7 @@ export interface InputProps {
 	placeholder?: string;
 	defaultValue?: string;
 	disabled?: boolean;
-	onClick?: React.MouseEventHandler;
-	onChange?: any;
-	name?: string;
-	ref?: any;
-	value?: any;
+	onChange?: <T>(any) => void;
 	inputType?:
 		| "text"
 		| "email"
@@ -23,28 +20,48 @@ export interface InputProps {
 		| "date"
 		| "reset";
 	label?: string;
+
+	value?: {} | string;
+	minDate?: {} | undefined;
 }
 
 export const Input = ({
 	inputType = "text",
 	label,
+	value,
+	id,
+	onChange,
+	minDate,
+	disabled,
 	...otherProps
 }: InputProps) => {
 	const input = (
-		<div className="input-wrapper">
-			{label ? <Label text={label} className="input-wrapper--label" /> : false}
+		<div>
+			{label ? <Label text={label} /> : false}
 			<input
+				id={id}
+				disabled={disabled}
 				type={inputType}
-				className="input-wrapper--input"
+				onChange={onChange}
 				{...otherProps}
 			/>
 		</div>
 	);
 
 	if (inputType === "date") {
-		// TODO: ADD DATEPICKER
-		// return
+		return (
+			<div>
+				{label ? <Label text={label} /> : false}
+				<DatePickerInput
+					id={id}
+					value={value}
+					onChange={onChange}
+					minDate={minDate}
+					disabled={disabled}
+				/>
+			</div>
+		);
+	} else {
+		return input;
 	}
-
-	return input;
 };
